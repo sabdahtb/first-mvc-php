@@ -2,9 +2,12 @@
 
 class App
 {
-  protected $controller = "Home";
-  protected $method = "index";
-  protected $param = [];
+
+  protected $controller = 'Home';
+  protected $method = 'index';
+  protected $params = [];
+
+
 
   public function __construct()
   {
@@ -17,11 +20,11 @@ class App
       }
     }
 
-    require_once "../app/controllers/" . $this->controller . ".php";
+    require_once "../app/controllers/$this->controller.php";
     $this->controller = new $this->controller;
 
     if (isset($url[1])) {
-      if (method_exists($this->url, $url[1])) {
+      if (method_exists($this->controller, $url[1])) {
         $this->method = $url[1];
         unset($url[1]);
       }
@@ -31,7 +34,7 @@ class App
       $this->params = array_values($url);
     }
 
-    call_user_func_array([$this->controller, $this->method], $this->param);
+    call_user_func_array([$this->controller, $this->method], $this->params);
   }
 
   public function parseUrl()

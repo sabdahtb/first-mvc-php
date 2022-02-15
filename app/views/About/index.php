@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h3>Halaman About</h3>
+  <h3>About Me</h3>
 
   <div class="row">
     <div class="card" style="width: 18rem;">
