@@ -7,6 +7,12 @@
         Add Clover
       </button>
 
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <?php Flasher::flash() ?>
+        </div>
+      </div>
+
       <ul class="list-group mt-3">
         <?php foreach ($data['clover'] as $clo) : ?>
           <li class="list-group-item d-flex justify-content-between align-items-center">
